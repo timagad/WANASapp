@@ -1,0 +1,51 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: wanas
+      POSTGRES_PASSWORD: wanas
+      POSTGRES_DB: wanas
+    ports: ["5432:5432"]
+    volumes:
+      - wanas_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wanas -d wanas"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  cache:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./api
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://wanas:wanas@db:5432/wanas
+      REDIS_URL: redis://cache:6379/0
+    depends_on:
+      db: {condition: service_healthy}
+      cache: {condition: service_healthy}
+    ports: ["8000:8000"]
+    volumes:
+      - ./api:/srv
+
+  web:
+    build:
+      context: ./web
+      args:
+        # NEXT_PUBLIC_* is inlined into the client bundle at build time, so it must
+        # be a build arg. The browser reaches the API on the published port.
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    depends_on: [api]
+    ports: ["3000:3000"]
+
+volumes:
+  wanas_db:

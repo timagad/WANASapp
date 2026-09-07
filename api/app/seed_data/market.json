@@ -1,0 +1,214 @@
+{
+  "artisans": [
+    {
+      "key": "amirouche",
+      "name": "Amirouche Tounsi",
+      "workshop": "Atelier de Maâtkas",
+      "region": "Tizi Ouzou",
+      "craft": "pottery",
+      "story": "Troisième génération de potiers à Maâtkas. Façonne sans tour, comme sa grand-mère le lui a montré, et cuit au feu de bois."
+    },
+    {
+      "key": "elmenia",
+      "name": "Coopérative féminine d'El Menia",
+      "workshop": "Coopérative de tissage",
+      "region": "Ghardaïa",
+      "craft": "weaving",
+      "story": "Quatorze tisseuses travaillant la laine de mouton sur métiers verticaux, selon les motifs transmis dans la vallée du M'Zab."
+    },
+    {
+      "key": "fatima",
+      "name": "Fatima Naït Amara",
+      "workshop": "Atelier d'argent de Djanet",
+      "region": "Illizi",
+      "craft": "jewellery",
+      "story": "Travaille l'argent, l'ébène et la cornaline selon les formes touarègues du Tassili."
+    },
+    {
+      "key": "yacine",
+      "name": "Yacine Belkacem",
+      "workshop": "Maroquinerie de la Basse Casbah",
+      "region": "Alger",
+      "craft": "leather",
+      "story": "Coupe et coud à la main dans un atelier de la Basse Casbah ouvert par son père en 1978."
+    },
+    {
+      "key": "nadia",
+      "name": "Nadia Benchikh",
+      "workshop": "Atelier de broderie du Vieux Rocher",
+      "region": "Constantine",
+      "craft": "embroidery",
+      "story": "Brode la fetla et le medjboud au fil d'or sur velours, pour le karakou et la gandoura de fête."
+    }
+  ],
+  "products": [
+    {
+      "artisan": "amirouche",
+      "name": "Poterie kabyle peinte",
+      "name_ar": "فخّار قبائلي مزخرف",
+      "category": "pottery",
+      "price_centimes": 320000,
+      "stock": 12,
+      "technique": "Façonnage sans tour, engobe clair, décor géométrique brun et rouge, cuisson au feu de bois",
+      "origin": "Maâtkas, Tizi Ouzou",
+      "story": "Pièce façonnée à la main sans tour, à la technique du colombin, puis couverte d'un engobe clair sur lequel le décor géométrique est peint à l'ocre et au brun avant une cuisson au feu de bois. Les motifs en losanges et en chevrons appartiennent au répertoire kabyle. Chaque pièce sort légèrement différente de la précédente : c'est la marque du travail sans tour."
+    },
+    {
+      "artisan": "elmenia",
+      "name": "Tapis du M'Zab en laine",
+      "name_ar": "زربية ميزابية من الصوف",
+      "category": "rug",
+      "price_centimes": 1150000,
+      "stock": 4,
+      "technique": "Tissage à la main sur métier vertical, laine de mouton filée et teinte à la main",
+      "origin": "El Menia, Ghardaïa",
+      "story": "Tapis tissé sur métier vertical par la coopérative féminine d'El Menia, en laine de mouton filée puis teinte sur place. Les bandes alternées et les motifs en losanges suivent le répertoire du M'Zab. Un tapis de cette taille demande de six à huit semaines de travail à deux tisseuses."
+    },
+    {
+      "artisan": "fatima",
+      "name": "Khomessa touarègue en argent",
+      "name_ar": "خمسة تارقية من الفضّة",
+      "category": "jewellery",
+      "price_centimes": 580000,
+      "stock": 7,
+      "technique": "Argent gravé au burin, incrustation d'ébène, montage sur cordon de cuir",
+      "origin": "Djanet, Illizi",
+      "story": "Main de protection gravée au burin dans l'argent, avec incrustation d'ébène, selon les formes touarègues du Tassili n'Ajjer. Le motif est repris de génération en génération dans les ateliers de Djanet. Montée sur un cordon de cuir tanné localement."
+    },
+    {
+      "artisan": "yacine",
+      "name": "Sacoche en cuir cousue main",
+      "name_ar": "حقيبة جلدية مخيطة يدويًا",
+      "category": "leather",
+      "price_centimes": 440000,
+      "stock": 9,
+      "technique": "Cuir pleine fleur, coupe et couture sellier à la main, fil ciré",
+      "origin": "Casbah, Alger",
+      "story": "Sacoche taillée dans un cuir pleine fleur et cousue au point sellier, à la main, dans un atelier de la Basse Casbah. Le fil est ciré à la main. Une pièce de ce format demande environ deux jours de travail."
+    },
+    {
+      "artisan": "nadia",
+      "name": "Étole brodée fetla au fil d'or",
+      "name_ar": "شال مطرّز بالفتلة والخيط الذهبي",
+      "category": "embroidery",
+      "price_centimes": 890000,
+      "stock": 5,
+      "technique": "Broderie fetla et medjboud au fil d'or sur velours",
+      "origin": "Constantine",
+      "story": "Étole en velours brodée à la fetla et au medjboud, les deux techniques au fil d'or de Constantine, employées traditionnellement pour le karakou et la gandoura de fête. Le motif central est monté au medjboud, les contours à la fetla. Comptez une trentaine d'heures de broderie."
+    },
+    {
+      "artisan": "elmenia",
+      "name": "Coussin tissé motifs du M'Zab",
+      "name_ar": "وسادة منسوجة بزخارف ميزابية",
+      "category": "rug",
+      "price_centimes": 210000,
+      "stock": 18,
+      "technique": "Tissage à la main, laine de mouton, motifs en chevrons",
+      "origin": "El Menia, Ghardaïa",
+      "story": "Housse de coussin tissée à la main sur le même métier que les grands tapis, dans les chutes de laine filée par la coopérative. Motifs en chevrons du répertoire du M'Zab."
+    }
+  ],
+  "providers": [
+    {
+      "key": "guide-casbah",
+      "name": "Sofiane Merabet",
+      "provider_type": "guide",
+      "region": "Alger",
+      "languages": ["fr", "ar", "dz", "en"],
+      "certified": true,
+      "rating": 4.8,
+      "bio": "Guide agréé, né dans la Haute Casbah. Visites à pied de la médina, des palais ottomans et de la Basse Casbah.",
+      "services": [
+        {
+          "title": "Casbah d'Alger à pied — demi-journée",
+          "description": "Trois heures dans la médina : Djamaa el Kebir, Ketchaoua, Dar Hassan Pacha, ateliers d'artisans et thé chez l'habitant.",
+          "price_centimes": 450000,
+          "duration_minutes": 180,
+          "max_party": 8,
+          "site": "casbah-alger"
+        }
+      ]
+    },
+    {
+      "key": "guide-tipasa",
+      "name": "Lynda Hamdi",
+      "provider_type": "guide",
+      "region": "Tipaza",
+      "languages": ["fr", "en", "ar"],
+      "certified": true,
+      "rating": 4.9,
+      "bio": "Archéologue de formation, guide sur le site de Tipasa et le Mausolée royal de Maurétanie.",
+      "services": [
+        {
+          "title": "Tipasa et le Mausolée royal — journée",
+          "description": "Parcs est et ouest, nécropole chrétienne, puis le Mausolée royal de Maurétanie. Déjeuner de poisson en bord de mer.",
+          "price_centimes": 700000,
+          "duration_minutes": 420,
+          "max_party": 10,
+          "site": "tipasa"
+        }
+      ]
+    },
+    {
+      "key": "hote-ghardaia",
+      "name": "Dar El Bahdja",
+      "provider_type": "host",
+      "region": "Ghardaïa",
+      "languages": ["ar", "dz", "fr"],
+      "certified": true,
+      "rating": 4.6,
+      "bio": "Maison d'hôtes traditionnelle dans un ksar du M'Zab, cinq chambres autour d'un patio.",
+      "services": [
+        {
+          "title": "Nuit en maison d'hôtes du M'Zab",
+          "description": "Chambre double avec petit-déjeuner, terrasse sur la palmeraie.",
+          "price_centimes": 650000,
+          "duration_minutes": 720,
+          "max_party": 2,
+          "site": "vallee-mzab"
+        }
+      ]
+    },
+    {
+      "key": "activite-hoggar",
+      "name": "Tinhinan Expéditions",
+      "provider_type": "activity",
+      "region": "Tamanrasset",
+      "languages": ["fr", "ar", "en"],
+      "certified": true,
+      "rating": 4.7,
+      "bio": "Agence de trekking saharien à Tamanrasset, guides touaregs de l'Ahaggar.",
+      "services": [
+        {
+          "title": "Lever de soleil à l'Assekrem — deux jours",
+          "description": "Piste depuis Tamanrasset, nuit au refuge, montée avant l'aube et petit-déjeuner face aux aiguilles de l'Ahaggar.",
+          "price_centimes": 2400000,
+          "duration_minutes": 2880,
+          "max_party": 6,
+          "site": "assekrem-hoggar"
+        }
+      ]
+    },
+    {
+      "key": "guide-constantine",
+      "name": "Karim Bouzid",
+      "provider_type": "guide",
+      "region": "Constantine",
+      "languages": ["ar", "dz", "fr"],
+      "certified": false,
+      "rating": 4.4,
+      "bio": "Passionné de malouf, propose des marches urbaines de pont en pont et une écoute chez un maître de musique.",
+      "services": [
+        {
+          "title": "Constantine de pont en pont",
+          "description": "Sidi M'Cid, les gorges du Rhumel, le palais du bey Ahmed, puis écoute de malouf en fin de journée.",
+          "price_centimes": 380000,
+          "duration_minutes": 240,
+          "max_party": 12,
+          "site": "constantine-ponts"
+        }
+      ]
+    }
+  ]
+}

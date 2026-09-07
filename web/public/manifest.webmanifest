@@ -1,0 +1,13 @@
+{
+  "name": "WANAS — Votre compagnon de voyage en Algérie",
+  "short_name": "WANAS",
+  "description": "Guide IA du patrimoine algérien, itinéraires personnalisés, artisanat et réalité augmentée.",
+  "start_url": "/fr",
+  "display": "standalone",
+  "background_color": "#0B2E25",
+  "theme_color": "#12463A",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

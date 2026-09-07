@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens are mirrored from the WANAS proof-of-concept prototypes.
+ * Utilities handle layout; this layer carries the few pieces of styling that
+ * genuinely define the brand — the phone frame, the ambient pattern, the
+ * bubbles — where a wall of utility classes would obscure the intent.
+ */
+
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Arabic and Darija render with a face that actually has the glyphs. */
+:root[dir="rtl"] {
+  --font-body: "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-display: "Noto Kufi Arabic", "Segoe UI", Tahoma, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* The ambient pattern behind the device bleeds 120px past the stage. In LTR
+     that overflow is clipped by the body; in RTL the document grows to the left
+     instead and the whole app drifts off-centre, so clip on both elements. */
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  color: theme("colors.ink");
+  background: radial-gradient(1200px 700px at 50% -10%, #1c5142 0%, #0b2e25 55%, #081f19 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+@layer components {
+  /* ---------- shell ---------- */
+  .stage {
+    @apply relative flex min-h-screen items-center justify-center px-4 py-0 md:py-10;
+  }
+
+  /* The concentric-arc motif behind the device, from the prototype. */
+  .stage::before {
+    content: "";
+    position: absolute;
+    inset: -120px;
+    background-image:
+      radial-gradient(circle at center, transparent 34%, rgba(232, 179, 61, 0.1) 34.5%, rgba(232, 179, 61, 0.1) 35.5%, transparent 36%),
+      radial-gradient(circle at center, transparent 34%, rgba(232, 179, 61, 0.1) 34.5%, rgba(232, 179, 61, 0.1) 35.5%, transparent 36%);
+    background-size: 90px 90px, 90px 90px;
+    background-position: 0 0, 45px 45px;
+    opacity: 0.55;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(circle at 50% 40%, black 0%, transparent 68%);
+    mask-image: radial-gradient(circle at 50% 40%, black 0%, transparent 68%);
+  }
+
+  /* On a phone the app is the page; on a desktop it sits in a device frame. */
+  .phone {
+    @apply relative z-10 w-full md:w-[376px] md:rounded-[52px] md:bg-[#050d0a] md:p-[14px] md:shadow-phone;
+  }
+
+  .screen-frame {
+    @apply flex h-[100dvh] w-full flex-col overflow-hidden bg-cream md:h-[786px] md:rounded-[38px];
+  }
+
+  .content {
+    @apply relative flex-1 overflow-y-auto;
+    scrollbar-width: none;
+  }
+  .content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .screen {
+    @apply animate-rise px-5 pb-28 pt-2;
+  }
+
+  /* ---------- type ---------- */
+  .eyebrow {
+    @apply mb-1 text-[11px] font-extrabold uppercase tracking-[0.09em] text-secondary;
+  }
+  .page-title {
+    @apply font-display text-[26px] font-semibold text-primary-dark;
+  }
+  .sub {
+    @apply mb-4 text-[13.5px] text-muted;
+  }
+  .section-title {
+    @apply mb-2.5 mt-5 flex items-center justify-between font-display text-[16.5px] font-semibold text-primary-dark;
+  }
+  .section-title small {
+    @apply cursor-pointer font-body text-[11.5px] font-bold text-secondary;
+  }
+
+  /* ---------- controls ---------- */
+  .chip {
+    @apply shrink-0 cursor-pointer rounded-full border border-line bg-white px-3.5 py-2 text-[12.5px] font-semibold text-ink transition hover:border-primary hover:bg-primary hover:text-white;
+  }
+  .chip-active {
+    @apply border-primary bg-primary text-white;
+  }
+  .lang-chip {
+    @apply cursor-pointer rounded-full border-[1.5px] border-line px-3 py-1.5 text-[12px] font-bold text-muted transition;
+  }
+  .lang-chip-active {
+    @apply border-primary bg-[#EAF2EF] text-primary;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-[13px] font-bold text-white transition hover:bg-primary-light disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-[13px] font-bold text-primary transition hover:border-primary;
+  }
+  .field {
+    @apply w-full rounded-2xl border border-line bg-white px-4 py-3 text-[13.5px] text-ink outline-none transition placeholder:text-muted focus:border-primary;
+  }
+
+  /* ---------- cards ---------- */
+  .card {
+    @apply rounded-2xl border border-line bg-white p-4;
+  }
+  .ask-bar {
+    @apply flex cursor-pointer items-center gap-2.5 rounded-[18px] border border-line bg-white px-4 py-3.5 shadow-card transition hover:-translate-y-px;
+  }
+  .site-card {
+    @apply relative w-[150px] shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-0.5;
+  }
+  /* `end` rather than `right`, so the badge stays on the outer corner in RTL. */
+  .ar-badge {
+    @apply absolute end-1.5 top-1.5 z-[5] flex items-center gap-1 rounded-full bg-accent px-2 py-1 text-[9px] font-extrabold text-primary-dark shadow;
+  }
+
+  /* ---------- chat ---------- */
+  .bubble {
+    @apply max-w-[85%] animate-rise rounded-2xl px-3.5 py-2.5 text-[13.5px] leading-relaxed;
+  }
+  .bubble-user {
+    @apply self-end rounded-br-[4px] bg-primary text-white;
+  }
+  .bubble-bot {
+    @apply self-start rounded-bl-[4px] border border-line bg-white;
+  }
+  :root[dir="rtl"] .bubble-user {
+    @apply rounded-br-2xl rounded-bl-[4px];
+  }
+  :root[dir="rtl"] .bubble-bot {
+    @apply rounded-bl-2xl rounded-br-[4px];
+  }
+
+  /* ---------- timeline ---------- */
+  .stop-node {
+    @apply mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full border-2 border-primary bg-cream;
+  }
+  .stop-line {
+    @apply mx-auto w-px flex-1 bg-line;
+  }
+
+  /* ---------- nav ---------- */
+  .nav-btn {
+    @apply flex flex-1 flex-col items-center gap-1 py-2 text-[10px] font-bold text-muted transition;
+  }
+  .nav-btn-active {
+    @apply text-primary;
+  }
+}
+
+/* Respect a reader who asked the system to stop moving things. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
